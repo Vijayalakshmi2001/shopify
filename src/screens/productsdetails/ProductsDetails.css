@@ -1,0 +1,17 @@
+.product-details-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+}
+
+.product-details-image-listing {
+    height: 400px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.product-details {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

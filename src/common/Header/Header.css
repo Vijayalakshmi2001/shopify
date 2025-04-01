@@ -1,0 +1,35 @@
+.header-container {
+    background-color: darkblue;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.nav-links-sec {
+    display:flex;
+    justify-content: center;
+    gap: 30px;
+}
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+.nav-icon {
+    position: relative;
+}
+.icon {
+    background-color: white;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px; 
+    position: absolute;
+    top: -15px;
+    left: 18px;
+    font-size: 16px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 

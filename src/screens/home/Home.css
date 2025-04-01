@@ -1,0 +1,30 @@
+.slider {
+    padding-top: 5px;
+}
+.slider-image {
+    height: 70vh;
+    width: 100%;
+    object-fit: cover;
+}
+.product-listing-sec {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.loader {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-listing-home{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+.toast {
+    position:fixed;
+    bottom: 5%;
+    right: 5%;
+}
