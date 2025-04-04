@@ -1,8 +1,13 @@
-import { useSelector } from "react-redux";
-import "./Cart.css"
+import { useSelector, useDispatch } from "react-redux";
+import "./Cart.css";
+import Image from "../../assets/images/emptycart.jpg";
+import { Button } from "react-bootstrap";
+import { cartSlice } from "../../redux/cart/cartSlice";
+
 function Cart() {
+    const dispatch =useDispatch();
     const selector = useSelector((state: any) => state.cart);
-    
+
     function calculateTotalAmount() {
         let amount = 0;
         for (let x of selector.selectedProducts) {
@@ -10,11 +15,14 @@ function Cart() {
         }
         return Math.round(amount);
     }
+    console.log(selector.selectedProducts);
 
     return (
         <>
             {selector.selectedProducts.length === 0 ? (
-                <div>Cart is Empty</div>
+                <section className="empty-cart">
+                    <img className="empty-cart-image" src={Image} alt="image"></img>
+                </section>
             ) : (
                 <>
                     <section className="price-section">
@@ -34,6 +42,22 @@ function Cart() {
                                         <h4 className="">{item.title}</h4>
                                         <p>{item.description}</p>
                                         <h5> &#8377;{item.price}</h5>
+                                    </div>
+                                    <div style={{ marginTop: "auto", marginBottom: "auto" }}>
+                                        <Button
+                                            onClick={() => {
+                                                const newItems: any =[
+                                                    ...selector.selectedProducts,
+                                                ].filter((value) => {
+                                                    console.log(value.id !== item.id);
+                                                    return value.id !== item.id;
+                                                });
+                                                console.log(newItems);
+                                                dispatch(cartSlice.actions.updateProducts(newItems));
+                                            }}
+                                            variant="outline-danger"
+                                        >Remove
+                                        </Button>
                                     </div>
                                 </section>
                             );

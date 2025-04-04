@@ -13,5 +13,8 @@ export const cartSlice = createSlice({
         setProducts(state, payload: any) {
             state.selectedProducts = [...state.selectedProducts, payload.payload];
         },
+        updateProducts(state, payload: any) {
+            state.selectedProducts = payload.payload;
+        },
     },
 });
