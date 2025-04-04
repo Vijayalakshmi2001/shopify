@@ -11,7 +11,7 @@ import {createContext, useState } from "react";
 
 export const Context = createContext<any>(null);
 
-function App() {
+function App() { 
   const [home, setHomeInfo] = useState({
     homeScreen: true,
   });

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import "./Cart.css";
 import Image from "../../assets/images/emptycart.jpg";
-import { Button } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
 import { cartSlice } from "../../redux/cart/cartSlice";
 
 function Cart() {
@@ -39,12 +39,12 @@ function Cart() {
                                         src={item.images[0]} alt={item.title}
                                     ></img>
                                     <div className="product-card-title">
-                                        <h4 className="">{item.title}</h4>
-                                        <p>{item.description}</p>
+                                        <h5 className="">{item.title}</h5>
+                                        {/* <p>{item.description}</p> */}
                                         <h5> &#8377;{item.price}</h5>
                                     </div>
-                                    <div style={{ marginTop: "auto", marginBottom: "auto" }}>
-                                        <Button
+                                    <div className="button-sec">
+                                        <Button variant="outline-danger"
                                             onClick={() => {
                                                 const newItems: any =[
                                                     ...selector.selectedProducts,
@@ -54,9 +54,7 @@ function Cart() {
                                                 });
                                                 console.log(newItems);
                                                 dispatch(cartSlice.actions.updateProducts(newItems));
-                                            }}
-                                            variant="outline-danger"
-                                        >Remove
+                                            }}>Remove
                                         </Button>
                                     </div>
                                 </section>

@@ -4,7 +4,7 @@ import Logo from '../../assets/images/logo.png';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 function Header() {
-    const selector = useSelector((state:any)=>state.cart)
+    const selector = useSelector((state:any)=>state.cart)                       
     console.log(selector);
     return (
         <header className="header-container">
